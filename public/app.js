@@ -4,31 +4,33 @@
 /**
  * Created by jonathan.solomon on 11/30/2016.
  */
-var shopApp = angular.module('shopApp', ['ngRoute']);
+var shopApp = angular.module('shopApp', ['ui.router']);
 
-shopApp.config(function($routeProvider, $locationProvider){
+shopApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 
-    $routeProvider
+    $urlRouterProvider.otherwise('views/home.html')
+
+    $stateProvider
 
     //let's make some routes for the pages that don't technically exist yet!
-        .when('/',{
+        .state('home',{
 
-            templateUrl: 'views/home.html',
-            controller: 'mainController'
-
-        })
-
-        .when('/clothes',{
-
-            templateUrl: 'views/clothes.html',
-            controller: 'clothesController'
+            url: '/home',
+            templateUrl: 'views/home.html'
 
         })
 
-        .when('/contact',{
+        .state('clothes',{
 
-            templateUrl: 'views/contact.html',
-            controller: 'contactController'
+            url: '/clothes',
+            templateUrl: 'views/clothes.html'
+
+        })
+
+        .state('contact',{
+
+            url: '/contact',
+            templateUrl: 'views/contact.html'
 
         });
 
