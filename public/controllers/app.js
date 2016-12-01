@@ -8,7 +8,7 @@ var shopApp = angular.module('shopApp', ['ui.router']);
 
 shopApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 
-    $urlRouterProvider.otherwise('views/home.html')
+    $urlRouterProvider.otherwise('/home');
 
     $stateProvider
 
@@ -16,21 +16,24 @@ shopApp.config(function($stateProvider, $urlRouterProvider, $locationProvider){
         .state('home',{
 
             url: '/home',
-            templateUrl: 'views/home.html'
+            templateUrl: '../views/home.html',
+            controller: 'mainController'
 
         })
 
         .state('clothes',{
 
             url: '/clothes',
-            templateUrl: 'views/clothes.html'
+            templateUrl: '../views/clothes.html',
+            controller: 'clothesController'
 
         })
 
         .state('contact',{
 
             url: '/contact',
-            templateUrl: 'views/contact.html'
+            templateUrl: '../views/contact.html',
+            controller: 'contactController'
 
         });
 
