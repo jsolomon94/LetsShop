@@ -1,20 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="shopApp" lang="en">
 <head>
 
-    <!--Import bootstrap-->
-    <link rel="stylesheet" href="C:\Users\jonathan.solomon\Desktop\Stuff\LetsShop\node_modules\bootstrap\dist\css\bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
 
-    <!--Optional theme-->
-    <link rel="stylesheet" href="C:\Users\jonathan.solomon\Desktop\Stuff\LetsShop\node_modules\bootstrap\dist\css\bootstrap-theme.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0-rc.2/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0-rc.2/angular-route.js"></script>
+    <script src="app.js"></script>
 
-    <!--Javascript-->
-    <script src="C:\Users\jonathan.solomon\Desktop\Stuff\LetsShop\node_modules\bootstrap\dist\js\bootstrap.min.js"></script>
+    <!--Personal Stylesheet-->
+    <link rel="stylesheet" href="stylesheets/style.css">
 
     <meta charset="UTF-8">
     <title>Hello Everybody!</title>
 </head>
 <body>
 
+<header>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Angular Routing Example</a>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                <li><a href="#clothes"><i class="fa fa-shield"></i> Clothes</a></li>
+                <li><a href="#contact"><i class="fa fa-comment"></i> Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<div id="main">
+
+    <div ng-view></div>
+
+</div>
 </body>
 </html>
